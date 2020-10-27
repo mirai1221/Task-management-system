@@ -28,5 +28,4 @@
 |task_id  |string|      |
 
 
-日付　
-![2020/10/27](“https://user-images.githubusercontent.com/53572363/97275222-03469980-1879-11eb-874d-6740086923f6.png”)
+![2020/10/27](https://user-images.githubusercontent.com/53572363/97275222-03469980-1879-11eb-874d-6740086923f6.png)
