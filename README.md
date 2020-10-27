@@ -29,4 +29,4 @@
 
 
 日付　
-![2020/10/27](“https://i.gyazo.com/53e548e08bdd0e7cc0eca4658baaac19.jpg”)
+![2020/10/27](“https://user-images.githubusercontent.com/53572363/97275222-03469980-1879-11eb-874d-6740086923f6.png”)
