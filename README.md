@@ -18,3 +18,9 @@
 |description |string|      |
 |deadline |string|      |
 |user_id  |string|      |
+
+### label table
+|Column   |Type  |Option|
+|---------|------|------|
+|type  |string|      |
+|task_id  |string|      |
