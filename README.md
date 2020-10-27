@@ -15,9 +15,9 @@
 ### tasks table
 |Column   |Type  |Option|
 |---------|------|------|
-|content  |string|      |
+|name  |string|      |
 |status   |string|      |
-|description |string|      |
+|description |text|null: true|
 |deadline |string|      |
 |user_id  |string|      |
 
