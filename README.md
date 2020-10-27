@@ -1,30 +1,24 @@
-#README
+# README
 
-##開発環境
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-### users table
-|Column   |Type  |Option|
-|---------|------|------|
-|user_name|string|      |
-|email    |string|      |
-|password |string|      |
+Things you may want to cover:
 
+* Ruby version
 
-### tasks table
-|Column   |Type  |Option|
-|---------|------|------|
-|content  |string|      |
-|status   |string|      |
-|description |string|      |
-|deadline |string|      |
-|user_id  |string|      |
+* System dependencies
 
-### label table
-|Column   |Type  |Option|
-|---------|------|------|
-|type  |string|      |
-|task_id  |string|      |
+* Configuration
 
+* Database creation
 
-日付　
-![画像１](https://un4navi.com/wp-content/uploads/tcd-w/logo.png?1576654454 “運用ナビ ロゴ”)
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
