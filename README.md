@@ -29,4 +29,4 @@
 
 
 日付　
-![2020/10/27](“/Users/fujiwaramirai/Desktop/image/Task image/2020/10/27.HEIC”)
+![2020/10/27](“https://gyazo.com/53e548e08bdd0e7cc0eca4658baaac19”)
