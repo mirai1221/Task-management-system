@@ -1,24 +1,32 @@
-# README
+#README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##開発環境
+- Ruby 2.5.1p57
+- Rails 5.2.
 
-Things you may want to cover:
+### users table
+|Column   |Type  |Option|
+|---------|------|------|
+|user_name|string|      |
+|email    |string|      |
+|password |string|      |
 
-* Ruby version
 
-* System dependencies
+### tasks table
+|Column   |Type  |Option|
+|---------|------|------|
+|content  |string|      |
+|status   |string|      |
+|description |string|      |
+|deadline |string|      |
+|user_id  |string|      |
 
-* Configuration
+### label table
+|Column   |Type  |Option|
+|---------|------|------|
+|type  |string|      |
+|task_id  |string|      |
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+日付　
+![画像１](https://un4navi.com/wp-content/uploads/tcd-w/logo.png?1576654454 “運用ナビ ロゴ”)
