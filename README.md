@@ -29,4 +29,4 @@
 
 
 日付　
-![画像１](https://un4navi.com/wp-content/uploads/tcd-w/logo.png?1576654454 “運用ナビ ロゴ”)
+![2020/10/27](“/Users/fujiwaramirai/Desktop/image/Task image/2020/10/27.HEIC”)
