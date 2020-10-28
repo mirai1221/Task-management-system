@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
   def index
+    @tasks = Task.all
   end
 
   def show
+    @task = Task.find(params[:id])
   end
 
   def new
@@ -11,8 +13,12 @@ class TasksController < ApplicationController
 
   def create
     task = Task.new(task_params)#安全なデータを使ってオブジェクトを作成しデータベースに保存する
-    task.save!
-    redirect_to tasks_url, notice: "タスク「#{task.name}」を登録しました。"
+    if task.save!
+      redirect_to tasks_url, notice: "タスク「#{task.name}」を登録しました。"
+    else
+      flash[:notice] = "タスクを登録出来ませんでした。"
+      render action: :new
+    end
   end
 
   def edit
@@ -20,6 +26,6 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).premit(:name,:description)
+    params.require(:task).permit(:name,:description)
   end
 end
