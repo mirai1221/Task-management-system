@@ -24,6 +24,9 @@ class TasksController < ApplicationController
   def edit
   end
 
+  def update
+  end
+
   private
   def task_params
     params.require(:task).permit(:name,:description)
