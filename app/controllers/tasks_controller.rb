@@ -34,7 +34,7 @@ class TasksController < ApplicationController
   def destroy
     task = Task.find(params[:id])
     task.destroy　
-    redirect_to tasks_url, notice: "タスク「#{task.name}」を削除しました。" # GCが動いている
+    redirect_to tasks_url, notice: "タスク「#{task.name}」を削除しました。" # GCが動いている可能性がある
   end
 
   private
