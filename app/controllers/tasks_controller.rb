@@ -12,12 +12,12 @@ class TasksController < ApplicationController
   end
 
   def create
-    task = Task.new(task_params)#安全なデータを使ってオブジェクトを作成しデータベースに保存する
-    if task.save!
+    @task = Task.new(task_params)#安全なデータを使ってオブジェクトを作成しデータベースに保存する
+    if @task.save
       redirect_to tasks_url, notice: "タスク「#{task.name}」を登録しました。"
     else
       flash[:notice] = "タスクを登録出来ませんでした。"
-      render action: :new
+      render :new
     end
   end
 
@@ -33,7 +33,7 @@ class TasksController < ApplicationController
 
   def destroy
     task = Task.find(params[:id])
-    task.destroy　
+    task.destroy
     redirect_to tasks_url, notice: "タスク「#{task.name}」を削除しました。" # GCが動いている可能性がある
   end
 
