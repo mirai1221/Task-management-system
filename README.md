@@ -10,6 +10,7 @@
 |user_name|string|      |
 |email    |string|      |
 |password |string|      |
+|admin |boolean|default=>false, null=>false|
 
 
 ### tasks table
