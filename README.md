@@ -1,7 +1,7 @@
 #README
 
 ##開発環境
-- Ruby 2.6.5
+- Ruby 2.5.1 => 2.6.5
 - Rails 5.2.
 
 ### users table
