@@ -2,14 +2,14 @@ doctype html
 html
   head
     title
-      | TaskManagementSystem
+      | タスク管理システム
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     .app-title.navbar.navbar-expand-md.navbar-light.bg-light
-      .navbar-brand TaskManagementSystem
+      .navbar-brand タスク管理システム
     .container
       -if flash.notice.present?
         .alert.alert-success= flash.notice
