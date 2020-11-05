@@ -14,7 +14,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)#安全なデータを使ってオブジェクトを作成しデータベースに保存する
     if @task.save
-      redirect_to tasks_url, notice: "タスク「#{task.name}」を登録しました。"
+      redirect_to tasks_url, notice: "タスク「#{@task.name}」を登録しました。"
     else
       flash[:notice] = "タスクを登録出来ませんでした。"
       render :new
