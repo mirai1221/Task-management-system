@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only:[:show,:edit,:update,:destroy]
   def index
-    @tasks = current_user.tasks.oreder(created_at: :desc)
+    @tasks = current_user.tasks.recent#task.rbにメソッド定義
   end
 
   def show
@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.new(task_params)
     if @task.save
       redirect_to tasks_url, notice: "タスク「#{@task.name}」を登録しました。"
     else
