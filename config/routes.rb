@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
-  namespace :admin do #urlに/admin、ヘルパーメソッドにadmin_がつくようになっている
-    resources :users
-  end
   root to: 'tasks#index'
-  resources :tasks #resourcesメソッドは全てのアクションに関するルーティングを一括で設定してくれ
+  controller :sessions do
+    get '/login', to: 'sessions#new'
+    post '/login', to: 'sessions#create'
+    delete '/logout', to: 'sessions#destroy'
+  end
+  controller :users do
+    namespace :admin do #urlに/admin、ヘルパーメソッドにadmin_がつくようになっている
+      resources :users
+    end
+  end
+  controller :tasks do
+    resources :tasks #resourcesメソッドは全てのアクションに関するルーティングを一括で設定してくれる
+  end
 end
