@@ -6,7 +6,7 @@ class Task < ApplicationRecord
 
   scope :recent, -> { order(created_at: :desc)}
 
-  def self.ransackable_attributes(auth_object = nil) #selfオブジェクト自身
+  def self.ransackable_attributes(auth_object = nil)
     %w[name created_at]
   end
 
