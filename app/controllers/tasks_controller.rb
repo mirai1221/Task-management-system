@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   before_action :set_task, only:[:show,:edit,:update,:destroy]
+
   def index
-    @tasks = current_user.tasks.recent#task.rbにメソッド定義
+    @q = current_user.tasks.ransack(params[:q])
+    @tasks = @q.result(distinct: true).recent #task.rbにメソッド定義
   end
 
   def show
