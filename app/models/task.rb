@@ -12,11 +12,11 @@ class Task < ApplicationRecord
     end
   end
 
-  def sele.import(file)
+  def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       task = new
       task.attributes = row.to_hash.slice(*csv_attributes)
-      task.sace!
+      task.save!
     end
   end
 
