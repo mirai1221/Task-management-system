@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   controller :tasks do
     resources :tasks do#resourcesメソッドは全てのアクションに関するルーティングを一括で設定してくれる
       post :confirm, action: :confirm_new, on: :new
+      post :import, on: :collection
     end
   end
 end
