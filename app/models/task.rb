@@ -12,6 +12,14 @@ class Task < ApplicationRecord
     end
   end
 
+  def sele.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      task = new
+      task.attributes = row.to_hash.slice(*csv_attributes)
+      task.sace!
+    end
+  end
+
   has_one_attached :image
   validates :name, presence: true
   validates :name, length: { maximum: 30 }
