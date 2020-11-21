@@ -27,6 +27,7 @@ class TasksController < ApplicationController
     end
 
     if @task.save
+      TaskMailer.creation_email(@task).deliver_now # メイラーの即時送信を行うメソッド
       redirect_to tasks_url, notice: "タスク「#{@task.name}」を登録しました。"
     else
       flash[:notice] = "タスクを登録出来ませんでした。"
