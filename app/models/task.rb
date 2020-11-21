@@ -7,7 +7,7 @@ class Task < ApplicationRecord
     CSV.generate(headers: true) do |csv|
       csv << csv_attributes
       all.each do |task|
-        csv << csv_attributes.map{ |attr| task.sand(attr) }
+        csv << csv_attributes.map{ |attr| task.send(attr) }
       end
     end
   end
