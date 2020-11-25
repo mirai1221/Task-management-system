@@ -56,7 +56,6 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    head :no_content #HTTPステータスで204(成功)が返る
   end
 
   private
