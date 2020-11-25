@@ -56,7 +56,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to tasks_url, notice: "タスク「#{@task.name}」を削除しました。" # GCが動いている可能性がある
+    head :no_content #HTTPステータスで204(成功)が返る
   end
 
   private
