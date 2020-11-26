@@ -7,20 +7,29 @@
 ### users table
 |Column   |Type  |Option|
 |---------|------|------|
-|user_name|string|      |
-|email    |string|      |
-|password |string|      |
-|admin |boolean|default=>false, null=>false|
+|name　　　|string　　　|null: false|
+|email    |string|null: false|
+|password_digest |string|null: false|
+|admin |boolean|default: false, null: false|
+|created_at|datetime|null: false|
+|updated_at|datetime|null: false|
+|email|index|unique: true|
 
+Association
+- has_many :tasks
+- has_one_attached :image
 
 ### tasks table
 |Column   |Type  |Option|
 |---------|------|------|
-|name  |string|      |
+|name  |string|limit: 30, null: false|
 |status   |string|      |
-|description |text|null: true|
+|description |text||
 |deadline |string|      |
-|user_id  |string|      |
+|user_id  |references|null: false,|
+
+Association
+- belongs_to :user
 
 ### label table
 |Column   |Type  |Option|
