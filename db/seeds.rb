@@ -14,7 +14,7 @@ User.find_or_create_by!(email: 'admin@example.com') do |user|
 end
 
 User.find_or_create_by!(email: 'test@example.com') do |user|
-  user.name: = 'test'
+  user.name = 'test'
   user.admin = false
   user.password = 'password'
   user.password_confirmation = 'password'
