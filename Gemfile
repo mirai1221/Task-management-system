@@ -70,3 +70,4 @@ gem 'ransack'
 gem 'kaminari'
 gem 'sidekiq', '~> 5.0'
 gem 'pry-rails'
+gem "aws-sdk-s3", require: false
