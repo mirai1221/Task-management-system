@@ -35,6 +35,9 @@ class Task < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     []
   end
+
+  enum status: { not_started: 0, undertake: 1, completion: 2 }
+
   private
 
   def validate_name_not_including_comma

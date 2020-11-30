@@ -13,4 +13,10 @@
   .form-group
     = f.label :image
     = f.file_field :image, class: 'form-control'
+  .form-group
+  = f.label :status
+  = f.select :status, Task.statuses_i18n.invert
+  .form-group
   = f.submit '登録する', class: 'btn btn-primary'
+
+
