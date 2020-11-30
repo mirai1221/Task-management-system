@@ -1,4 +1,12 @@
 class Task < ApplicationRecord
+  has_one_attached :image
+  validates :name, presence: true
+  validates :name, length: { maximum: 30 }
+  validate :validate_name_not_including_comma
+  belongs_to :user
+
+  enum status: { not_started: 0, undertake: 1, completion: 2 }
+
   def self.csv_attributes
     ["name", "description", "created_at", "updated_at"]
   end
@@ -20,11 +28,6 @@ class Task < ApplicationRecord
     end
   end
 
-  has_one_attached :image
-  validates :name, presence: true
-  validates :name, length: { maximum: 30 }
-  validate :validate_name_not_including_comma
-  belongs_to :user
 
   #scope :recent, -> { order(created_at: :desc)}
 
@@ -36,7 +39,6 @@ class Task < ApplicationRecord
     []
   end
 
-  enum status: { not_started: 0, undertake: 1, completion: 2 }
 
   private
 
