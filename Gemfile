@@ -70,7 +70,7 @@ gem 'pry-rails'
 gem 'rails_autolink'
 gem 'ransack'
 gem 'rubocop', require: false
-gem 'rubocop-rails'
+gem 'rubocop-rails', require: false
 gem 'sidekiq', '~> 5.0'
 gem 'slim-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
