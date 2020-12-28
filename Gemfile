@@ -72,3 +72,5 @@ gem 'sidekiq', '~> 5.0'
 gem 'pry-rails'
 gem "aws-sdk-s3", require: false
 gem 'enum_help'
+gem 'rubocop', require: false
+gem 'rubocop-rails'
