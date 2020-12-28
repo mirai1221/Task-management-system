@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe TaskMailer, type: :mailer do
-
   let(:task) { FactoryBot.create(:task, name: 'メイラーSpecを書く', description: '送信したメールの内容を確認します') }
 
   let(:text_body) do
@@ -22,12 +21,12 @@ describe TaskMailer, type: :mailer do
       expect(mail.to).to eq(['user@example.com'])
       expect(mail.from).to eq(['taskleaf@example.com'])
 
-      #text形式の本文
+      # text形式の本文
       expect(text_body).to match('以下のタスクを作成しました')
       expect(text_body).to match('メイラーSpecを書く')
       expect(text_body).to match('送信したメールの内容を確認します')
 
-      #html形式の本文
+      # html形式の本文
       expect(html_body).to match('以下のタスクを作成しました')
       expect(html_body).to match('メイラーSpecを書く')
       expect(html_body).to match('送信したメールの内容を確認します')

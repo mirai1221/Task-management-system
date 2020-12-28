@@ -6,12 +6,12 @@ Rails.application.routes.draw do
     delete '/logout', to: 'sessions#destroy'
   end
   controller :users do
-    namespace :admin do #urlに/admin、ヘルパーメソッドにadmin_がつくようになっている
+    namespace :admin do # urlに/admin、ヘルパーメソッドにadmin_がつくようになっている
       resources :users
     end
   end
   controller :tasks do
-    resources :tasks do#resourcesメソッドは全てのアクションに関するルーティングを一括で設定してくれる
+    resources :tasks do # resourcesメソッドは全てのアクションに関するルーティングを一括で設定してくれる
       post :confirm, action: :confirm_new, on: :new
       post :import, on: :collection
     end
