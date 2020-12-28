@@ -7,6 +7,15 @@ class Task < ApplicationRecord
 
   enum status: { not_started: 0, undertake: 1, completion: 2 }
 
+  def self.ransackable_attributes(auth_object = nil)
+    %w[name created_at]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    []
+  end
+
+  # CSV内容
   # def self.csv_attributes
   #   ["name", "description", "created_at", "updated_at"]
   # end
@@ -30,14 +39,6 @@ class Task < ApplicationRecord
 
 
   #scope :recent, -> { order(created_at: :desc)}
-
-  def self.ransackable_attributes(auth_object = nil)
-    %w[name created_at]
-  end
-
-  def self.ransackable_associations(auth_object = nil)
-    []
-  end
 
 
   private
