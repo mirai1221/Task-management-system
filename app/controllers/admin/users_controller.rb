@@ -21,7 +21,7 @@ class Admin::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to admin_users_path,notice: "ユーザー「#{@user.name}」を登録しました"
+      redirect_to admin_users_path, notice: "ユーザー「#{@user.name}」を登録しました"
     else
       render :new
     end
@@ -44,6 +44,7 @@ class Admin::UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :email, :admin, :password, :password_confirmation)
   end

@@ -7,11 +7,34 @@ class Task < ApplicationRecord
 
   enum status: { not_started: 0, undertake: 1, completion: 2 }
 
-  def self.ransackable_attributes(auth_object = nil)
+  def self.csv_attributes
+    %w[name description created_at updated_at]
+  end
+
+  def self.generate_csv
+    CSV.generate(headers: true) do |csv|
+      csv << csv_attributes
+      all.each do |task|
+        csv << csv_attributes.map { |attr| task.send(attr) }
+      end
+    end
+  end
+
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      task = new
+      task.attributes = row.to_hash.slice(*csv_attributes)
+      task.save!
+    end
+  end
+
+  # scope :recent, -> { order(created_at: :desc)}
+
+  def self.ransackable_attributes(_auth_object = nil)
     %w[name created_at]
   end
 
-  def self.ransackable_associations(auth_object = nil)
+  def self.ransackable_associations(_auth_object = nil)
     []
   end
 
@@ -44,6 +67,6 @@ class Task < ApplicationRecord
   private
 
   def validate_name_not_including_comma
-    errors.add(:name,'にカンマを含めることはできません') if name&.include?(',')
+    errors.add(:name, 'にカンマを含めることはできません') if name&.include?(',')
   end
 end

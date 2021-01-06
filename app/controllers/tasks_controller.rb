@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only:[:show,:edit,:update,:destroy]
+  before_action :set_task, only: %i[show edit update destroy]
 
   def index
     @q = current_user.tasks.ransack(params[:q])
@@ -13,11 +13,10 @@ class TasksController < ApplicationController
 
   def import
     current_user.tasks.import(params[:file])
-    redirect_to tasks_url, notice: "タスクを追加しました"
+    redirect_to tasks_url, notice: 'タスクを追加しました'
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @task = Task.new
@@ -41,13 +40,12 @@ class TasksController < ApplicationController
       # TaskMailer.creation_email(@task).deliver_now # メイラーの即時送信を行うメソッド
       # SampleJob.perform_later
     else
-      flash[:notice] = "タスクを登録出来ませんでした。"
+      flash[:notice] = 'タスクを登録出来ませんでした。'
       render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @task.update!(task_params)
@@ -60,11 +58,12 @@ class TasksController < ApplicationController
   end
 
   private
+
   def task_params
-    params.require(:task).permit(:name,:description,:image,:status)
+    params.require(:task).permit(:name, :description, :image, :status)
   end
 
   def set_task
-    @task = current_user.tasks.find(params[:id])#ログインユーザーのIDも一緒に保存する必要あり
+    @task = current_user.tasks.find(params[:id]) # ログインユーザーのIDも一緒に保存する必要あり
   end
 end
