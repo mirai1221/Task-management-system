@@ -1,2 +1,27 @@
 # 一時的にスルーする設定
 # inherit_from: .rubocop_todo.yml
+AllCops:
+  NewCops: enable
+
+# 追加した規約ファイル読込
+require:
+  - rubocop-rails
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# クラスのコメント必須を無視
+Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# メソッド内の文字数最大文字
+Metrics/MethodLength:
+  Max: 20
+
+# ブロック内の文字数最大文字
+Metrics/BlockLength:
+  Max: 60
