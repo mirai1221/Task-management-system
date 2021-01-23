@@ -38,12 +38,13 @@ class Task < ApplicationRecord
   # end
 
 
-  #scope :recent, -> { order(created_at: :desc)}
+  # scope :recent, -> { order(created_at: :desc)}
 
 
   private
 
   def validate_name_not_including_comma
+    # nameにコンマが含まれているか調べる nameがnilの場合例外が発生するのを避けるため&を利用して、nameがnilの時は検証を通るようにする
     errors.add(:name, 'にカンマを含めることはできません') if name&.include?(',')
   end
 end

@@ -28,6 +28,7 @@ class TasksController < ApplicationController
   end
 
   def create
+    # 直前にユーザーが入力した値をフォームに引き継いで入力する
     @task = current_user.tasks.new(task_params)
 
     if params[:back].present?
@@ -58,7 +59,7 @@ class TasksController < ApplicationController
   end
 
   private
-
+  # フォームからリクエストパラメータとして送られてきたデータが想定どおりかをチェックしpermit後のデータだけを受け取る
   def task_params
     params.require(:task).permit(:name, :description, :image, :status)
   end
