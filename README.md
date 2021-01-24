@@ -31,13 +31,7 @@ Association
 Association
 - belongs_to :user
 
-### label table
-|Column   |Type  |Option|
-|---------|------|------|
-|type  |string|      |
-|task_id  |string|      |
-
-### 
+### 開発前モデル図
 ![2020/10/27](https://user-images.githubusercontent.com/53572363/97308747-8d582780-18a4-11eb-936f-371f6b0873b8.JPG)
 
 ### 機能追加
