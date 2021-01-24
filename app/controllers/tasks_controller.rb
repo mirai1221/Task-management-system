@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[show edit update destroy]
-
+  # Ransack simplemode
   def index
     @q = current_user.tasks.ransack(params[:q])
     @tasks = @q.result(distinct: true).page(params[:page])
@@ -28,6 +28,7 @@ class TasksController < ApplicationController
   end
 
   def create
+    # 関連を利用してログインしているuser_idをTaskデータに登録できている
     # 直前にユーザーが入力した値をフォームに引き継いで入力する
     @task = current_user.tasks.new(task_params)
 

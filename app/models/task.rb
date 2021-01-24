@@ -6,7 +6,7 @@ class Task < ApplicationRecord
   belongs_to :user
 
   enum status: { not_started: 0, undertake: 1, completion: 2 }
-
+  # 検索に使用してよいカラムの制限
   def self.ransackable_attributes(_auth_object = nil)
     %w[name created_at]
   end
