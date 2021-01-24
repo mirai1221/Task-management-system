@@ -12,18 +12,19 @@ h1 タスク一覧
   .form-group
     = f.submit class: 'btn btn-outline-primary'
 
-= link_to '新規登録', new_task_path, class: 'btn btn-primary'
+= link_to '新規登録', new_task_path, class: 'btn btn-primary mb-3'
 
 .mb-3
   = paginate @tasks
   = page_entries_info @tasks
 
-.mb-3
+
 table.table.table-hover
+
   thead.thead-default
     tr
-      th= sort_link(@q, :name, default_order: :desc)
-      th= Task.human_attribute_name(:created_at)
+      th= sort_link(@q, :name, [:name, "created_at desc"])
+      th= sort_link(@q, :created_at, default_order: :desc)
       th
   tbody
     - @tasks.each do |task|
