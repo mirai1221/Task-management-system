@@ -31,7 +31,7 @@ Association
 Association
 - belongs_to :user
 
-### 開発前モデル図
+### 開発前 画面推移図・ER図
 ![2020/10/27](https://user-images.githubusercontent.com/53572363/97308747-8d582780-18a4-11eb-936f-371f6b0873b8.JPG)
 
 ### 機能追加
